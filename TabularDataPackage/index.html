@@ -1,0 +1,17 @@
+---
+layout: default
+title: TabularDataPackage
+root: .
+description: "A Schema.org-based specification for a TabularDataPackage in materials science and engineering."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a> &gt; 
+     <a class="schema" href="https://schema.org/Dataset">Dataset</a> &gt; 
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<p>This schema is currently under development. It will likely be similar to <a href="{{ site.rooturl }}{{ site.baseurl }}/File">File</a>, but incorperate JSON Schema specificion for <a href="https://frictionlessdata.io/specs/tabular-data-package/">TabularDataPackage</a> maintained by <a href="https://frictionlessdata.io/">https://frictionlessdata.io/</a>.</p>

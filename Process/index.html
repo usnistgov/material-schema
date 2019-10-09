@@ -1,0 +1,92 @@
+---
+layout: default
+title: Process
+root: .
+description: "A process type specifying the synthesis and processing protocol or history of a material."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> 
+     <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a> &gt;
+     <a class="schema" href="https://schema.org/HowTo">HowTo</a> &gt;
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a><br />
+
+     <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/Intangible">Intangible</a> &gt;
+     <a class="schema" href="https://schema.org/ItemList">ItemList</a> &gt;
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a><br />
+
+     <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/Intangible">Intangible</a> &gt;
+     <a class="schema" href="https://schema.org/ListItem">ListItem</a> &gt;
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a><br />
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<table class="table table-bordered">
+    <thead> <tr class="head">
+        <th>Property</th>
+        <th>Expected Type</th>
+        <th>Description</th>
+        </tr>
+    </thead> <tbody>
+        <tr class="head">
+        <td colspan="3">Properties from <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a></td>
+        </tr>
+        {% include property/measurementTechnique.html %}
+        {% include property/parameterControlled.html %}
+        {% include property/variableMeasured_Dataset.html %}
+        <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/HowTo">HowTo</a></td>
+        {% include property/estimatedCost.html %}
+        {% include property/performTime.html %}
+        {% include property/prepTime.html %}
+        {% include property/step.html %}
+        {% include property/supply.html %}
+        {% include property/tool.html %}
+        {% include property/totalTime.html %}
+        {% include property/yield.html %}
+        </tr>
+        <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/ItemList">ItemList</a></td>
+
+        </tr>
+        <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/ListItem">ListItem</a></td>
+        {% include property/position.html %}
+        </tr>
+        <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a></td>
+        </tr>
+        {% include property/about.html %}
+        {% include property/accountablePerson.html %}
+        {% include property/author.html %}
+        {% include property/citation.html %}
+        {% include property/comment.html %}
+        {% include property/contributor.html %}
+        {% include property/copyrightHolder.html %}
+        {% include property/creator.html %}
+        {% include property/dateCreated.html %}
+        {% include property/dateModified.html %}
+        {% include property/datePublished.html %}
+        {% include property/editor.html %}
+        {% include property/funder.html %}
+        {% include property/isBasedOn_Process.html %}
+        {% include property/keywords.html %}
+        {% include property/license.html %}
+        {% include property/material.html %}
+        {% include property/materialExtent.html %}
+        {% include property/provider.html %}
+        {% include property/publisher.html %}
+        {% include property/workExample.html %}
+        <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Thing">Thing</a></td>
+        </tr>
+        {% include property/alternateName.html %}
+        {% include property/description.html %}
+        {% include property/identifier.html %}
+        {% include property/name.html %}
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+---
+layout: default
+title: DataDownload
+root: .
+description: "A dataset in downloadable form within materials science and engineering."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a> &gt; 
+     <a class="schema" href="https://schema.org/MediaObject">MediaObject</a> &gt;
+     <a class="schema" href="https://schema.org/DataDownload">DataDownload</a> &gt; 
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<table class="table table-bordered">
+    <thead> <tr class="head">
+        <th>Property</th>
+        <th>Expected Type</th>
+        <th>Description</th>
+      </tr>
+    </thead> <tbody>
+      <tr class="head">
+        <td colspan="3">Properties from <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a></td>
+      </tr>
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/DataDownload">DataDownload</a></td>
+      </tr>
+      {% include property/measurementTechnique.html %}
+      <tr class="head">
+          <td colspan="3">Properties from <a class="schema" href="https://schema.org/MediaObject">MediaObject</a></td>
+        </tr>
+        {% include property/contentUrl.html %}
+        {% include property/encodingFormat.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a></td>
+      </tr>
+      {% include property/about.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Thing">Thing</a></td>
+      </tr>
+      {% include property/alternateName.html %}
+      {% include property/description.html %}
+      {% include property/identifier.html %}
+      {% include property/name.html %}
+    </tbody>
+  </table>

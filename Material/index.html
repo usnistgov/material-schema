@@ -1,0 +1,51 @@
+---
+layout: default
+title: Material
+root: .
+description: "A Schema.org-based specification for a Material in materials science and engineering. A material is any measurable substance (e.g., sample, specimen, material, chemical, etc.), or a specific sup-sample (e.g., location on a larger artifact, sub-portion of a larger artifact, item within a collection of specimens, etc."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a> &gt;
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<table class="table table-bordered">
+    <thead> <tr class="head">
+        <th>Property</th>
+        <th>Expected Type</th>
+        <th>Description</th>
+      </tr>
+    </thead> <tbody>
+      <tr class="head">
+        <td colspan="3">Properties from <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a></td>
+      </tr>
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a></td>
+      </tr>
+      {% include property/about.html %}
+      {% include property/accountablePerson.html %}
+      {% include property/citation.html %}
+      {% include property/comment.html %}
+      {% include property/contributor.html %}
+      {% include property/creator.html %}
+      {% include property/dateCreated.html %}
+      {% include property/exampleOfWork_Material.html %}
+      {% include property/funder.html %}
+      {% include property/hasPart.html %}
+      {% include property/isPartOf.html %}
+      {% include property/keywords.html %}
+      {% include property/provider.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Thing">Thing</a></td>
+      </tr>
+      {% include property/alternateName.html %}
+      {% include property/description.html %}
+      {% include property/identifier.html %}
+      {% include property/name.html %}
+      {% include property/subjectOf.html %}
+    </tbody>
+  </table>

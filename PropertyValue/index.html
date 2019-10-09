@@ -1,0 +1,47 @@
+---
+layout: default
+title: PropertyValue
+root: .
+description: "A property-value pair, e.g. representing a controled or measured physical quantity."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/Intangible">Intangible</a> &gt; 
+     <a class="schema" href="https://schema.org/StructuredValue">StructuredValue</a> &gt; 
+     <a class="schema" href="https://schema.org/PropertyValue">PropertyValue</a> &gt;
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<table class="table table-bordered">
+    <thead> <tr class="head">
+        <th>Property</th>
+        <th>Expected Type</th>
+        <th>Description</th>
+      </tr>
+    </thead> <tbody>
+      <tr class="head">
+        <td colspan="3">Properties from <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a></td>
+      </tr>
+      {% include property/parameterControlled.html %}
+      {% include property/unit.html %}
+      {% include property/variableMeasured_Dataset.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/PropertyValue">PropertyValue</a></td>
+      </tr>
+      {% include property/propertyID.html %}
+      {% include property/unitCode.html %}
+      {% include property/unitText.html %}
+      {% include property/value.html %}
+      {% include property/valueReference.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Thing">Thing</a></td>
+      </tr>
+      {% include property/alternateName.html %}
+      {% include property/description.html %}
+      {% include property/identifier.html %}
+      {% include property/name.html %}
+    </tbody>
+  </table>

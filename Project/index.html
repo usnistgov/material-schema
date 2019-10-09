@@ -1,0 +1,52 @@
+---
+layout: default
+title: Project
+root: .
+description: "A Schema.org-based specification for a Project in materials science and engineering. An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim. Use properties from Organization, subOrganization/parentOrganization to indicate project sub-structures."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/Organization">Organization</a> &gt; 
+     <a class="schema" href="https://schema.org/Project">Project</a> &gt; 
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<table class="table table-bordered">
+    <thead> <tr class="head">
+        <th>Property</th>
+        <th>Expected Type</th>
+        <th>Description</th>
+      </tr>
+    </thead> <tbody>
+      <tr class="head">
+        <td colspan="3">Properties from <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a></td>
+      </tr>
+      {% include property/about.html %}
+      {% include property/keywords.html %}
+      <tr class="head">
+          <td colspan="3">Properties from <a class="schema" href="https://schema.org/Project">Project</a></td>
+        </tr>
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Organization">Organization</a></td>
+      </tr>
+      {% include property/contactPoint.html %}
+      {% include property/dissolutionDate.html %}
+      {% include property/email.html %}
+      {% include property/foundingDate.html %}
+      {% include property/member.html %}
+      {% include property/memberOf.html %}
+      {% include property/parentOrganization.html %}
+      {% include property/subOrganization.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Thing">Thing</a></td>
+      </tr>
+      {% include property/alternateName.html %}
+      {% include property/description.html %}
+      {% include property/identifier.html %}
+      {% include property/name.html %}
+      {% include property/subjectOf.html %}
+    </tbody>
+  </table>
