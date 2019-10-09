@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"/> <![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="0"/>
+        <title>{{ page.title }} - {{ site.title }}</title>
+        <meta name="description" content="{{ site.description }}">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <!-- NIST Header/Footer -->
+        <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css"/>
+        <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer">//</script>
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- local CSS -->
+        <link href="{{ site.rooturl }}{{ site.baseurl }}/static/css/style.css" rel="stylesheet"/>
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org/",
+                "@type": "WebPage",
+                "name": "{{ page.title }} - {{ site.title }}",
+                "url": "{{ site.rooturl }}{{ site.baseurl }}{{ page.permalink }}",
+                "description": "{{ page.description }}"
+            }
+        </script>
+    </head>
+    <body>
+        {% include nav.html %}
+        <div class="container">
+            <div class="alert alert-danger" role="alert">
+            <a href="#" class="close" data-dismiss="alert">×</a>
+            <strong>Notice:</strong> 
+            This site is under active construction. These schemas are currently being drafted and are in an pre-alpha version to prepare for discussion within the community.
+            </div>
+            {{ content }}
+        </div>
+        <br />
+        {% include foot.html %}
+    </body>
+</html>

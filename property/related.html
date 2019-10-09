@@ -1,0 +1,39 @@
+---
+permalink: /related
+layout: default
+title: related
+root: .
+description: "The SKOS definition of related. Expected type allow referencing another DefinedTerm directly, or by termCode, or URL."
+---
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/Property">Property</a> &gt; 
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title}}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+            <h3 class="panel-title"> Values expected to be one of these types </h3>
+            </div>
+            <div class="panel-body">
+                <a href="{{ site.rooturl }}{{ site.baseurl }}/DefinedTerm">DefinedTerm</a><br />
+                <a class="schema" href="https://schema.org/Text">Text</a><br />
+                <a class="schema" href="https://schema.org/URL">URL</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                <h3 class="panel-title"> Used on these types </h3>
+                </div>
+                <div class="panel-body">
+                    <a href="{{ site.rooturl }}{{ site.baseurl }}/DefinedTerm">DefinedTerm</a>
+                </div>
+            </div>
+        </div>
+</div>

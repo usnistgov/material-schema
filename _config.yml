@@ -1,0 +1,6 @@
+# Site settings
+title: "Material Schemas"
+description: "The purpose of this site is to enable community to extend schema.org within materials science and engineering."
+
+baseurl: "/material-schema"
+rooturl: "https://pages.nist.gov"
