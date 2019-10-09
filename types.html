@@ -1,0 +1,99 @@
+---
+layout: default
+title: Types
+root: .
+description: "A listing of extended schema.org types for use within materials science and engineering."
+---
+
+<h1> Types </h1>
+{% include legend.html %}
+<ul class="tree">
+    <li><a class="schema" href="https://schema.org/Thing">Thing</a>
+        <ul>
+            <li><a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a>
+                <ul>
+                    <li><a class="schema" href="https://schema.org/Collection" >Collection</a></li>
+                    <li><a class="schema" href="https://schema.org/Collection" >Comment</a></li>
+                    <li><a class="schema" href="https://schema.org/DataCatalog" >DataCatalog</a></li>
+                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/DataManagementPlan" >DataManagementPlan</a></li>
+                    <li><a class="schema" href="https://schema.org/Dataset">Dataset</a> 
+                         (Extended: <a href="{{ site.rooturl }}{{ site.baseurl }}/Dataset" >Dataset</a>)
+                        <ul>
+                            <li><a href="{{ site.rooturl }}{{ site.baseurl }}/File" >File</a></li>
+                            <li><a href="{{ site.rooturl }}{{ site.baseurl }}/MaterialProperty" >MaterialProperty</a></li>
+                            <li><a href="{{ site.rooturl }}{{ site.baseurl }}/TabularDataPackage" >TabularDataPackage</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/DataType" >DataType</a></li>
+                    <li><a class="schema" href="https://schema.org/DefinedTermSet" >DefinedTermSet</a></li>
+                    <li><a class="schema" href="https://schema.org/HowTo" >HowTo</a>
+                        <ul>
+                            <li><a href="{{ site.rooturl }}{{ site.baseurl }}/Process" >Process</a>
+                                <ul>
+                                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/ProcessHistory" >ProcessHistory</a></li>
+                                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/ProcessProtocol" >ProcessProtocol</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/Instrument" >Instrument</a></li>
+                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/Material" >Material</a></li>
+                    <li><a class="schema" href="https://schema.org/MediaObject" >MediaObject</a>
+                        <ul>
+                            <li><a class="schema" href="https://schema.org/DataDownload" >DataDownload</a>
+                                (Extended: <a href="{{ site.rooturl }}{{ site.baseurl }}/DataDownload" >DataDownload</a>)
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="schema" href="https://schema.org/SoftwareApplication" >SoftwareApplication</a></li>
+                    <li><a class="schema" href="https://schema.org/SoftwareSourceCode" >SoftwareSourceCode</a></li>
+                </ul>
+            </li>
+            <li><a class="schema" href="https://schema.org/Intangible">Intangible</a>
+                <ul>
+                    <li><a class="schema" href="https://schema.org/DefinedTerm" >DefinedTerm</a>
+                        (Extended: <a href="{{ site.rooturl }}{{ site.baseurl }}/DefinedTerm" >DefinedTerm</a>)
+                        <ul>
+                            <li><a href="{{ site.rooturl }}{{ site.baseurl }}/UnitOfMeasurement" >UnitOfMeasurement</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="schema" href="https://schema.org/ItemList" >ItemList</a>
+                        <ul>
+                            <li><a href="{{ site.rooturl }}{{ site.baseurl }}/Process" >Process</a>
+                                <ul>
+                                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/ProcessHistory" >ProcessHistory</a></li>
+                                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/ProcessProtocol" >ProcessProtocol</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="schema" href="https://schema.org/ListItem" >ListItem</a>
+                        <ul>
+                            <li><a href="{{ site.rooturl }}{{ site.baseurl }}/Process" >Process</a>
+                                <ul>
+                                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/ProcessHistory" >ProcessHistory</a></li>
+                                    <li><a href="{{ site.rooturl }}{{ site.baseurl }}/ProcessProtocol" >ProcessProtocol</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="schema" href="https://schema.org/StructuredValue" >StructuredValue</a>
+                        <ul>
+                            <li><a class="schema" href="https://schema.org/PropertyValue" >PropertyValue</a>
+                                (Extended: <a href="{{ site.rooturl }}{{ site.baseurl }}/PropertyValue" >PropertyValue</a>)
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="schema" href="https://schema.org/Organization">Organization</a>
+                <ul>
+                    <li><a class="schema" href="https://schema.org/Project">Project</a>
+                        (Extended: <a href="{{ site.rooturl }}{{ site.baseurl }}/Project" >Project</a>)
+                    </li>
+                </ul>
+            </li>
+            <li><a class="schema" href="https://schema.org/Person">Person</a></li>
+        </ul>
+    </li>
+</ul>

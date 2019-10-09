@@ -1,0 +1,41 @@
+---
+permalink: /parameterControlled
+layout: default
+title: parameterControlled
+root: .
+description: "The parameterControlled property can indicate one or more variables that are controlled in the materials synthesis, characterization or simulation, described using DefinedTerm or as PropertyValue consisting of identifier, value, and unit."
+---
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/Property">Property</a> &gt; 
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title}}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+            <h3 class="panel-title"> Values expected to be one of these types </h3>
+            </div>
+            <div class="panel-body">
+                <a href="{{ site.rooturl }}{{ site.baseurl }}/PropertyValue">PropertyValue</a> <br />
+                <a class="schema" href="https://schema.org/Text">Text</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                <h3 class="panel-title"> Used on these types </h3>
+                </div>
+                <div class="panel-body">
+                    <a href="{{ site.rooturl }}{{ site.baseurl }}/Dataset">Dataset</a> <br />
+                    <a href="{{ site.rooturl }}{{ site.baseurl }}/File">File</a> <br />
+                    <a href="{{ site.rooturl }}{{ site.baseurl }}/MaterialProperty">MaterialProperty</a> <br />
+                    <a href="{{ site.rooturl }}{{ site.baseurl }}/PropertyValue">PropertyValue</a>
+                </div>
+            </div>
+        </div>
+</div>

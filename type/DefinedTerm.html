@@ -1,0 +1,46 @@
+---
+permalink: /DefinedTerm
+layout: default
+title: DefinedTerm
+root: .
+description: "A Schema.org-based specification for a DefinedTerm in materials science and engineering. This specifies a word, name, acronym, phrase, or concept with a formal definition. This schema is useful for serializing an existing ontology/taxonomy or enabling the bench scientist to create a minimal ontology/taxonomy when one is not available. Use the name property for the term being defined, use description to provide the definition of the term."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/Intangible">Intangible</a> &gt; 
+     <a class="schema" href="https://schema.org/DefinedTerm">DefinedTerm</a> &gt; 
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<table class="table table-bordered">
+    <thead> <tr class="head">
+        <th>Property</th>
+        <th>Expected Type</th>
+        <th>Description</th>
+      </tr>
+    </thead> <tbody>
+      <tr class="head">
+        <td colspan="3">Properties from <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a></td>
+      </tr>
+      {% include property/broader.html %}
+      {% include property/closeMatch.html %}
+      {% include property/exactMatch.html %}
+      {% include property/narrower.html %}
+      {% include property/related.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/DefinedTerm">DefinedTerm</a></td>
+      </tr>
+      {% include property/inDefinedTermSet.html %}
+      {% include property/termCode.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Thing">Thing</a></td>
+      </tr>
+      {% include property/alternateName.html %}
+      {% include property/description.html %}
+      {% include property/identifier.html %}
+      {% include property/name.html %}
+    </tbody>
+  </table>

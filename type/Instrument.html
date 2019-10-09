@@ -1,0 +1,54 @@
+---
+permalink: /Instrument
+layout: default
+title: Instrument
+root: .
+description: "A Schema.org-based specification for a physical instrument used in materials science and engineering (e.g., for synthesis, characterization, etc.).  The hasPart/isPartOf properties can be used to specify relations between instrument and components, where the component has the same data representation as an instrument."
+---
+
+<h1> {{ page.title }} </h1>
+<h4> <a class="schema" href="https://schema.org/Thing">Thing</a> &gt; 
+     <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a> &gt; 
+     <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a>
+</h4>
+{% include legend.html %}
+<h3>Description:</h3>
+<p>{{ page.description }}</p>
+<table class="table table-bordered">
+    <thead> <tr class="head">
+        <th>Property</th>
+        <th>Expected Type</th>
+        <th>Description</th>
+      </tr>
+    </thead> <tbody>
+      <tr class="head">
+        <td colspan="3">Properties from <a href="{{ site.rooturl }}{{ site.baseurl }}/{{ page.title }}">{{ page.title }}</a></td>
+      </tr>
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/CreativeWork">CreativeWork</a></td>
+      </tr>
+      {% include property/about.html %}
+      {% include property/accountablePerson.html %}
+      {% include property/citation.html %}
+      {% include property/comment.html %}
+      {% include property/contributor.html %}
+      {% include property/copyrightHolder.html %}
+      {% include property/creator.html %}
+      {% include property/dateCreated.html %}
+      {% include property/dateModified.html %}
+      {% include property/funder.html %}
+      {% include property/hasPart.html %}
+      {% include property/isBasedOn_Product.html %}
+      {% include property/isPartOf.html %}
+      {% include property/keywords.html %}
+      {% include property/license.html %}
+      {% include property/provider.html %}
+      <tr class="head">
+        <td colspan="3">Properties from <a class="schema" href="https://schema.org/Thing">Thing</a></td>
+      </tr>
+      {% include property/alternateName.html %}
+      {% include property/description.html %}
+      {% include property/identifier.html %}
+      {% include property/name.html %}
+    </tbody>
+  </table>
