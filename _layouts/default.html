@@ -21,6 +21,35 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!--Leave Notice-->
+        <script type="text/javascript" src="https://pages.nist.gov/leaveNotice/js/jquery.leaveNotice-nist.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+        <script>
+        $(document).ready(function(){
+            // Mark external (non-nist.gov) A tags with class "external"
+            //If the adress start with https and ends with nist.gov
+            var re_nist = new RegExp('^https?:\\/\\/.*nist\\.gov(\\/|$)');
+            var re_nist_github = new RegExp('^https?:\\/\\/.*usnistgov.*(\\/|$)');
+            //Regex to find address that start with https
+            var re_absolute_address = new RegExp('^((https?:)?\/\/)');
+            $("a").each(function(){
+            var url=$(this).attr('href');
+            console.log(url)
+            if( re_nist_github.test(url) || re_nist.test(url) || !re_absolute_address.test(url)){
+                console.log(url + ' local')
+                $(this).addClass('local');
+            }else{
+                //This a href appears to be external, so tag it
+                console.log(url + ' external')
+                $(this).addClass('nist-external');
+            }
+            });
+            // Add leaveNotice to external A elements
+            $('a.nist-external').leaveNotice();
+        });
+        </script>
+
         <!-- local CSS -->
         <link href="{{ site.rooturl }}{{ site.baseurl }}/static/css/style.css" rel="stylesheet"/>
         <script type="application/ld+json">
