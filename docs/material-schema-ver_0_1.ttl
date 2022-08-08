@@ -1,0 +1,164 @@
+@prefix mat:    <https://pages.nist.gov/material-schema/> .
+@prefix mathub: <https://materialhub.org/schema/#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+<http://materialhub.org/schema/> rdf:type owl:Ontology ;
+    rdfs:label "The material schema"@en ;
+    owl:versionInfo "0.1"@en ;
+    rdfs:comment "Material-Schema implements materials science specific terminology."@en ;
+    dc:publisher "NIST (https://nist.gov), MINED Research Group (https://matin.gatech.edu/)" .
+
+### Material-Schema Class Declarations ###
+# ------------------------------ #
+
+mat:Experiment          a rdfs:Class .
+mat:File                a rdfs:Class .
+mat:Form                a rdfs:Class .
+mat:Instrument          a rdfs:Class .
+mat:InstrumentAction    a rdfs:Class .
+mat:Material            a rdfs:Class .
+mat:MaterialPerformance a rdfs:Class .
+mat:MaterialProperty    a rdfs:Class .
+mat:MaterialStructure   a rdfs:Class .
+mat:Process             a rdfs:Class .
+mat:ProcessHistory      a rdfs:Class .
+mat:ProcessProtocol     a rdfs:Class .
+mat:UnitOfMeasurement   a rdfs:Class .
+
+
+### Material-Schema Property Declarations ###
+# ------------------------------ #
+
+mat:conditionObserved       a rdf:Property .
+mat:materialReference       a rdf:Property .
+mat:materialReferenceExtent a rdf:Property .
+mat:parameterControlled     a rdf:Property .
+mat:process                 a rdf:Property .
+mat:processReference        a rdf:Property .
+mat:supplyTo                a rdf:Property .
+mat:uncertainty             a rdf:Property .
+
+
+### Material-Schema Class Definitions ###
+# ------------------------------ #
+
+mat:Experiment rdfs:label "Experiment" ;
+    rdfs:subClassOf schema:Dataset .
+
+mat:File rdfs:label "File" ;
+    rdfs:subClassOf schema:Dataset .
+
+mat:Form rdfs:label "Form" ;
+    rdfs:subClassOf schema:File .
+
+mat:Instrument rdfs:label "Instrument" ;
+    rdfs:subClassOf schema:Product , schema:CreativeWork .
+
+mat:InstrumentAction rdfs:subClassOf schema:Action .
+
+mat:Material rdfs:label "Material" ;
+    rdfs:comment "Real or simulated matter with prescribed and actual composition, structure, properties, and performance. Created by a Process." ;
+    rdfs:subClassOf schema:CreativeWork .
+
+mat:MaterialPerformance rdfs:label "MaterialPerformance" ;
+    rdfs:comment "The ability of a material to perform in a given application. Includes the materials response to a complex environment usually as a component or in some other end use application." ;
+    rdfs:subClassOf schema:Dataset .
+
+mat:MaterialProperty rdfs:label "MaterialProperty" ;
+    rdfs:comment "The physical properties of a material. Includes first-principles type properties and those determined through precise testing." ;
+    rdfs:subClassOf schema:Dataset .
+
+mat:MaterialStructure rdfs:label "MaterialStructure" ;
+    rdfs:comment "The structure of a material constitutes the many physical and chemical components of the material and their spatial inter-relationships." ;
+    rdfs:subClassOf schema:Dataset .
+
+mat:Process rdfs:label "Process" ;
+    rdfs:comment "A change in a material due to an environment controlled by natural processes (e.g., solidification, precipitation, grain coarsening, corrosion, etc.), instruments (e.g., furnace, etc.), or simulations (e.g., phase field, etc.)." ;
+    rdfs:subClassOf schema:HowTo , schema:Dataset .
+
+mat:ProcessProtocol rdfs:label "ProcessProtocol" ;
+    rdfs:comment "The intended or prescribed process." ;
+    rdfs:subClassOf mat:Process .
+    
+mat:ProcessHistory rdfs:label "ProcessHistory" ;
+    rdfs:comment "The actual process as determined by measurements." ;
+    rdfs:subClassOf mat:Process .
+
+mat:UnitOfMeasurement rdfs:label "UnitOfMeasurement" ;
+    rdfs:subClassOf schema:DefinedTerm .
+
+
+### Material-Schema Property Definitions ###
+# ------------------------------ #
+
+mat:conditionObserved rdfs:label "conditionObserved" ;
+    rdfs:comment "The conditions observed while studying a process, studying a material, or taking some type of measurement." ;
+    rdfs:domain schema:Dataset , schema:HowTo , schema:PropertyValue ;
+    rdfs:range schema:PropertyValue , schema:DefinedTerm .
+
+mat:materialReference rdfs:label "materialReference" ;
+    rdfs:comment "A control material or material definition that adds reference to this object" ;
+    rdfs:domain schema:Dataset ;
+    rdfs:range mat:Material .
+
+mat:materialReferenceExtent rdfs:label "materialReference" ;
+    rdfs:comment "The material quantity of a control material or material definition that adds reference to this object" ;
+    rdfs:domain schema:Dataset ;
+    rdfs:range mat:Material .
+
+mat:parameterControlled rdfs:label "parameterControlled" ;
+    rdfs:comment "A parameter that can be controlled by an instrument, simulation parameter, or other means." ;
+    rdfs:domain schema:Dataset , schema:HowTo , schema:PropertyValue ;
+    rdfs:range schema:PropertyValue , schema:DefinedTerm .
+
+mat:process rdfs:label "process" ;
+    rdfs:comment "A process history that has occured and which this object describes." ;
+    rdfs:domain schema:Dataset ;
+    rdfs:range mat:ProcessHistory .
+
+mat:processReference rdfs:label "processReference" ;
+    rdfs:comment "A control process or process protocol to which this object is related to." ;
+    rdfs:domain schema:Dataset ;
+    rdfs:range mat:Process .
+
+mat:supplyTo rdfs:label "supplyTo" ;
+    rdfs:comment "The material supply for a process." ;
+    rdfs:domain mat:Material ;
+    rdfs:range mat:Process .
+    
+mat:uncertainty rdfs:label "uncertainty" ;
+    rdfs:comment "uncertainty in some measured property" ;
+    rdfs:domain schema:PropertyValue ;
+    rdfs:range schema:PropertyValue , schema:Number .
+
+
+### Material-Schema Extensions to Schema.org Property Definitions ###
+# ------------------------------ #
+
+schema:measurementTechnique rdfs:domain schema:DefinedTerm , 
+        mat:Instrument ,
+        schema:SoftwareApplication , 
+        schema:SoftwareSourceCode ,
+        schema:PropertyValue .
+
+schema:material rdfs:comment "A material sample which this object describes." ;
+    rdfs:range mat:Material .
+
+schema:materialExtent rdfs:range mat:Material .
+
+schema:location rdfs:domain schema:Product .
+
+mat:unitText rdfs:comment "units (in text) of the measured property" ;
+    rdfs:domain schema:PropertyValue ;
+    rdfs:range schema:Text .
+
+mat:unitCode rdfs:comment "units (in text) of the measured property" ;
+    rdfs:domain schema:PropertyValue ;
+    rdfs:range mat:UnitOfMeasurement .
